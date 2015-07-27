@@ -26,6 +26,8 @@ RUN	wget http://files.spankythehero.com/gameofsthcraft-qa.107-server.zip -O /ser
 RUN	cd /server && unzip pack.zip && rm pack.zip
 RUN	cd /server && sh install.sh
 
+RUN     echo "eula=true" > /server/eula.txt
+
 EXPOSE 25565
 EXPOSE 8123
 
