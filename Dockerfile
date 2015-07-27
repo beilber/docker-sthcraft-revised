@@ -22,7 +22,7 @@ RUN    echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-se
        apt-get --yes install curl oracle-java7-installer unzip
 
 RUN	mkdir /server
-RUN	wget http://files.spankythehero.com/gameofsthcraft-qa.107-server.zip -O /server/pack.zip
+RUN	wget http://files.spankythehero.com/gameofsthcraft-qa.108-server.zip -O /server/pack.zip
 RUN	cd /server && unzip pack.zip && rm pack.zip
 RUN	cd /server && sh install.sh
 
@@ -31,10 +31,10 @@ RUN     echo "eula=true" > /server/eula.txt
 EXPOSE 25565
 EXPOSE 8123
 
-VOLUME ["/server/dynmap"]
-VOLUME ["/server/config"]
-VOLUME ["/server/world"]
+VOLUME ["/data"]
 
-CMD    ["java", "-Xmx3G","-XX:PermSize=256M","-XX:+UseConcMarkSweepGC","-XX:+CMSIncrementalPacing","-XX:+AggressiveOpts","-jar","/server/KCauldron-1.7.10-1408.87-server.jar","nogui"]
+CMD	["/server/start.sh"]
+
+#CMD    ["java", "-Xmx3G","-XX:PermSize=256M","-XX:+UseConcMarkSweepGC","-XX:+CMSIncrementalPacing","-XX:+AggressiveOpts","-jar","/server/KCauldron-1.7.10-1408.87-server.jar","nogui"]
 
 
