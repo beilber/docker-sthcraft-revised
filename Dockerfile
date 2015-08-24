@@ -22,7 +22,7 @@ RUN    echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-se
        apt-get --yes install curl oracle-java7-installer unzip
 
 RUN	mkdir /server
-RUN	wget http://files.spankythehero.com/sthcraft-revised-updates.146-server.zip -O /server/pack.zip
+RUN	wget http://files.spankythehero.com/sthcraft-revised-updates.147-server.zip -O /server/pack.zip
 RUN	cd /server && unzip pack.zip && rm pack.zip
 RUN	cd /server && sh install.sh
 
