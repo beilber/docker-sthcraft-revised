@@ -26,7 +26,9 @@ RUN	wget http://files.spankythehero.com/sthcraft-revised-updates.146-server.zip 
 RUN	cd /server && unzip pack.zip && rm pack.zip
 RUN	cd /server && sh install.sh
 
-RUN     echo "eula=true" > /server/eula.txt
+RUN    echo "eula=true" > /server/eula.txt
+RUN    chmod +x /server/start.sh
+
 
 EXPOSE 25565
 EXPOSE 8123
